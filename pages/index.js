@@ -1,5 +1,7 @@
 import React from 'react';
-import { ReactFormGenerator, ElementStore } from 'react-form-builder2';
+import { ReactFormGenerator } from 'react-form-builder2';
+import fetch from 'isomorphic-unfetch'
+
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -8,6 +10,12 @@ export default class Home extends React.Component {
             data: []
         }
     }
+
+    static async getInitialProps({ req }) {
+        const res = await fetch('http://localhost:3000/api/formdata')
+        const data = await res.json()
+        return { data }
+      }
 
     _onSubmit() {
         alert('send data somewhere')
@@ -24,7 +32,7 @@ export default class Home extends React.Component {
                 form_method="POST"
                 onSubmit={this._onSubmit}
                 //   variables={props.variables}
-                data={this.state.data}
+                data={this.props.data}
             />
         </div>);
     }
