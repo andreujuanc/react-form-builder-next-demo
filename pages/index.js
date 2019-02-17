@@ -12,10 +12,11 @@ export default class Home extends React.Component {
     }
 
     static async getInitialProps({ req }) {
-        const res = await fetch('http://localhost:3000/api/formdata')
+        const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
+        const res = await fetch(`${baseUrl}/api/formdata`)
         const data = await res.json()
         return { data }
-      }
+    }
 
     _onSubmit() {
         alert('send data somewhere')
