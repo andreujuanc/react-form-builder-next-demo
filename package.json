@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "isomorphic-unfetch": "^3.0.0",
     "jquery": "^3.3.1",
     "next": "^8.0.1",
+    "next-fonts": "^0.17.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-form-builder2": "^0.1.22"

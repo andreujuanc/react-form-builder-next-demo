@@ -18,8 +18,8 @@ export default class Home extends React.Component {
         return { data }
     }
 
-    _onSubmit() {
-        alert('send data somewhere')
+    _onSubmit(data) {
+        alert('send data somewhere: ' + JSON.stringify(data))
     }
     render() {
         return (<div>
